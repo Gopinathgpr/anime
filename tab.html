@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Tabs Example</title>
+  <link rel="stylesheet" href="./custom.css">
+  <link rel="stylesheet" href="./bootstrap.css">
+
+  <script src="./bootstrap.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <script>
+    
+    function adjustFontSize() {
+      const screenWidth = window.innerWidth;
+      const fontSize = Math.max(9, Math.min(14, screenWidth / 50));
+      document.body.style.fontSize = fontSize + "px";
+    }
+    window.addEventListener("resize", adjustFontSize);
+    window.addEventListener("load", adjustFontSize);
+
+    function adjustH1FontSize() {
+      const screenWidth = window.innerWidth;
+      const fontSize = Math.max(20, Math.min(50, screenWidth / 20));
+      const h1Elements = document.querySelectorAll("h1");
+      h1Elements.forEach((h1) => {
+        h1.style.fontSize = fontSize + "px";
+      });
+    }
+    window.addEventListener("resize", adjustH1FontSize);
+    window.addEventListener("load", adjustH1FontSize);
+
+    function adjustH6FontSize() {
+      const screenWidth = window.innerWidth;
+      const fontSize = Math.max(12, Math.min(24, screenWidth / 50));
+      const h6Elements = document.querySelectorAll("h6");
+      h6Elements.forEach((h6) => {
+        h6.style.fontSize = fontSize + "px";
+      });
+    }
+    window.addEventListener("resize", adjustH6FontSize);
+    window.addEventListener("load", adjustH6FontSize);
+
+    function adjustH2FontSize() {
+      const screenWidth = window.innerWidth;
+      const fontSize = Math.max(16, Math.min(40, screenWidth / 25));
+      const h2Elements = document.querySelectorAll("h2");
+      h2Elements.forEach((h2) => {
+        h2.style.fontSize = fontSize + "px";
+      });
+    }
+    window.addEventListener("resize", adjustH2FontSize);
+    adjustH2FontSize();
+
+  </script>
+</head>
+
+<body>
+  <div class="container mt-4">
+    <!-- Nav Tabs -->
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button"
+          role="tab" aria-controls="tab1" aria-selected="true">
+          <i class="bi bi-house"></i> Tab 1</button>
+
+      </li>
+      <li class="nav-item " role="presentation">
+        <button class="nav-link" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab"
+          aria-controls="tab2" aria-selected="false"><i class="bi bi-house"></i> Tab 2</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="tab3-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button" role="tab"
+          aria-controls="tab3" aria-selected="false"><i class="bi bi-house"></i> Tab 3</button>
+      </li>
+    </ul>
+
+    <!-- Tab Content -->
+    <div class="tab-content p-4 bg-success" id="myTabContent">
+      <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+        <section>
+          <h2 class="mb-3">Features</h2>
+          <ul class="list-group mb-4">
+            <li class="list-group-item">High-quality products</li>
+            <li class="list-group-item">24/7 customer support</li>
+            <li class="list-group-item">Affordable pricing</li>
+            <li class="list-group-item">Affordable pricing</li>
+            <li class="list-group-item">Affordable pricing</li>
+
+          </ul>
+        </section>
+      </div>
+      <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+        <section>
+          <h2 class="mb-3">Table of Information</h2>
+          <table class="table table-striped table-bordered">
+            <thead class="table-dark">
+              <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>John Doe</td>
+                <td>28</td>
+                <td>New York</td>
+              </tr>
+              <tr>
+                <td>Jane Smith</td>
+                <td>32</td>
+                <td>Los Angeles</td>
+              </tr>
+              <tr>
+                <td>Sam Wilson</td>
+                <td>45</td>
+                <td>Chicago</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+      <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+        <section>
+          <h2 class="mb-3">Contact Us</h2>
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your name">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email">
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea style="resize: none;" class="form-control" id="message" rows="4"
+                placeholder="Write your message here"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </section>
+      </div>
+    </div>
+  </div>
+
+</body>
+</body>
+
+</html>

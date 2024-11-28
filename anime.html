@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div class="box"></div> -->
+    <h6>Example Heading 6</h6>
+    <h6>Another Heading 6</h6>
+    <h1>Another Heading 6</h1>
+    <p>Gopinath Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores placeat odio molestiae consequatur blanditiis enim animi impedit facere nam fuga inventore repellat veniam perferendis quasi suscipit reprehenderit cum, magni corporis.</p>
+    <style>
+        .body{
+          display: flex;
+          justify-content: center;
+          align-content: center;
+          
+        }
+        .box {
+           position: relative;
+           margin-top: 10%;
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+            animation-name: rotation;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        .box::after{
+            position: absolute;
+            content: '';
+            width: 60px;
+            height: 60px;
+            background-color: rgb(56, 161, 147);
+            animation-name: rotate;
+           
+            top: 60;
+            left: -30;
+
+
+        }
+        @keyframes rotate {
+            0% { 
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+
+        }
+
+        @keyframes rotation {
+            0%{
+                transform: rotate(0deg);
+                
+            }
+            25%{
+                transform: rotate(90deg);
+               transform: translate(120px);
+            }
+            50%{
+                transform: rotate(180deg);
+                
+                
+            }
+            75%{
+                transform: rotate(270deg);
+                transform: translate(600px);
+               
+            }   
+            100%{
+                transform: rotate(360deg);
+               
+                
+            }
+        }
+
+
+    </style>
+    <script>
+        function adjustFontSize() {
+          const screenWidth = window.innerWidth;
+          const fontSize = Math.max(9, Math.min(14, screenWidth / 50)); 
+          document.body.style.fontSize = fontSize + "px";
+        }
+      
+      
+        window.addEventListener("resize", adjustFontSize);
+        window.addEventListener("load", adjustFontSize);
+        
+        function adjustH1FontSize() {
+      const screenWidth = window.innerWidth;
+
+      // Calculate font size: between 20px and 50px, proportional to screen width
+      const fontSize = Math.max(20, Math.min(50, screenWidth / 20));
+
+      // Select all h1 elements and apply the font size
+      const h1Elements = document.querySelectorAll("h1");
+      h1Elements.forEach((h1) => {
+        h1.style.fontSize = fontSize + "px";
+      });
+    }
+
+    // Run the function on page load and when the window is resized
+    window.addEventListener("resize", adjustH1FontSize);
+    window.addEventListener("load", adjustH1FontSize);
+      </script>
+       <script>
+        function adjustH6FontSize() {
+          const screenWidth = window.innerWidth;
+    
+         
+          const fontSize = Math.max(12, Math.min(24, screenWidth / 50));
+    
+        
+          const h6Elements = document.querySelectorAll("h6");
+          h6Elements.forEach((h6) => {
+            h6.style.fontSize = fontSize + "px";
+          });
+        }
+    
+       
+        window.addEventListener("resize", adjustH6FontSize);
+        window.addEventListener("load", adjustH6FontSize);
+      </script>
+</body>
+
+</html>
